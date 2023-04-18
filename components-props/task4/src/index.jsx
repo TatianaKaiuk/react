@@ -7,15 +7,17 @@ import moment from 'moment';
 const elemRoot = document.querySelector('#root');
 
 
-const now=  moment(new Date());
-const birth = moment('2018-04-12');
-const date = now.from(birth);
-// console.log(date);
 
+ const birthDate = new Date('2018-04-12');
+const age = moment().diff(birthDate, 'Years');
+
+ 
 
 ReactDOM.render(
-  <Greeting firstName="Tom" 
-  lastName="Dou" 
-  birthDate={date} />,
+  <Greeting
+    firstName="Tom"
+    lastName="Dou"
+    birthDate={age}
+  />,
   elemRoot
 );
