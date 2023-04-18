@@ -1,5 +1,6 @@
 import React from 'react';
 
+// выносим компонент в отдельную функцию для отрисовки, где props - эдинный аргумент, можем вставлять спредом в текст html
 const Search = (props) => {
   return (
     <div className="search">
@@ -12,4 +13,4 @@ const Search = (props) => {
   );
 };
 
-export default Search;
+export default Search;  
