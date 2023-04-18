@@ -5,12 +5,11 @@ import './index.scss';
 
 const elemRoot = document.querySelector('#root');
 
-const author = {
-  
-  name: 'Tom',
-  avatarUrl: 'htpps://avatars1.githubusercontent.com',
-};
+const userInfo = {
+    name: 'Tom',
+    avatarUrl: 'htpps://avatars1.githubusercontent.com'
+}
 ReactDOM.render(
-  <Comment user={author} text="Good job!" date={new Date()} />,
+  <Comment author={userInfo} text="Good job!" date={new Date()} />,
   elemRoot
 );
