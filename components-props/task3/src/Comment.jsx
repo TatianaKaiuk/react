@@ -5,12 +5,12 @@ import UserInfo from './UserInfo';
 
 const formatDate = (date) => moment(date).format('DD MMM YYYY'); // генерация даты с помощью библиотеки moment
 
-function Comment(author) { // используем компоненты
+function Comment(props) { // используем компоненты
   return (
     <div className="comment">
-      <UserInfo user={author.user} />
-      <div className="comment__text">{author.text}</div>
-      <div className="comment__date">{formatDate(author.date)}</div>
+      <UserInfo user={props.user}/> 
+      <div className="comment__text">{props.text}</div>
+      <div className="comment__date">{formatDate(props.date)}</div>
     </div>
   );
 }

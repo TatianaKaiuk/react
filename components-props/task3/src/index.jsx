@@ -7,7 +7,7 @@ const elemRoot = document.querySelector('#root');
 
 const userInfo = {
     name: 'Tom',
-    avatarUrl: 'htpps://avatarsl.githubusercontent.com'
+    avatarUrl: 'htpps://avatars1.githubusercontent.com'
 }
 ReactDOM.render(<Comment 
 user={userInfo}
