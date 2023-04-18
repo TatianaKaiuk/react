@@ -2,13 +2,12 @@ import React from 'react';
 import moment from 'moment';
 
 
-const Greeting = (props) => {
-return (
-  <div className="greeting">
-    {`My name is ${props.firstName} ${props.lastName}.
-   I am ${moment().diff(props.birthDate, 'Years')} years old`}
-  </div>
-);
-}
+const Greeting = ({ firstName, lastName, birthDate }) => {
+  const age = moment().diff(moment(birthDate), 'Years');
+
+  return (
+    <div className="greeting">{`My name is ${firstName} ${lastName}. I am ${age} years old`}</div>
+  );
+};
 
 export default Greeting;
