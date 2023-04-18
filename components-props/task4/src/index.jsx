@@ -15,8 +15,8 @@ const age = moment().diff(birthDate, 'Years');
 
 ReactDOM.render(
   <Greeting
-    firstName="Tom"
-    lastName="Dou"
+    firstName="John"
+    lastName="Doe"
     birthDate={age}
   />,
   elemRoot
