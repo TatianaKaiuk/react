@@ -6,6 +6,7 @@ import './index.scss';
 const elemRoot = document.querySelector('#root');
 
 const userInfo = {
+    author: 'Ann',
     name: 'Tom',
     avatarUrl: 'htpps://avatars1.githubusercontent.com'
 }
