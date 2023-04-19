@@ -3,7 +3,7 @@ import moment from 'moment';
 
 const formDate = (date) => moment(date).format('DD MMM YY');
 
-const Profile = ({ ...userData }) => {
+const Profile = ({ userData }) => {
   return (
     <>
       <div className="profile__name">{`${userData.firstName} ${userData.lastName}`}</div>
