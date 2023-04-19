@@ -3,13 +3,14 @@ import moment from 'moment';
 
 const formDate = (date) => moment(date).format('DD MMM YY');
 
-const Profile = ({ firstName, lastName, birthDate, birthPlace }) => {
+const Profile = ({ ...userdata }) => {
+  console.log(userdata.birthPlace);
   return (
     <>
-      <div className="profile__name">{`${firstName} ${lastName}`}</div>
+      <div className="profile__name">{`${userdata.firstName} ${userdata.lastName}`}</div>
       <div className="profile__birth">{`Was born ${formDate(
-        birthDate
-      )} in ${birthPlace}`}</div>
+        userdata.birthDate
+      )} in ${userdata.birthPlace}`}</div>
     </>
   );
 };
