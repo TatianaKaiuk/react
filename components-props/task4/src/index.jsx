@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Greeting from './Greeting';
 import './index.scss';
-import moment from 'moment';
+
 
 const elemRoot = document.querySelector('#root');
 
