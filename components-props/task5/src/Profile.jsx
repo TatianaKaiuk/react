@@ -4,7 +4,6 @@ import moment from 'moment';
 const formDate = (date) => moment(date).format('DD MMM YY');
 
 const Profile = ({ ...userdata }) => {
-  console.log(userdata.birthPlace);
   return (
     <>
       <div className="profile__name">{`${userdata.firstName} ${userdata.lastName}`}</div>
