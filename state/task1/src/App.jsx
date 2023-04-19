@@ -1,7 +1,7 @@
 import React from 'react';
 import Counter from './Counter.jsx';
 
-const App = () => {
+const App = () => { // независимые компоненты
     return (
       <>
         <Counter start={5} interval={1000} />
