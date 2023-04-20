@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 class GoodButton extends Component {
     handleClick(e) {
-        alert(e.target.textContent);
+      // событие записываем как метод, и вставляем в render как onClick={this.handleClick}
+      alert(e.target.textContent);
     }
     render(){
         return (
