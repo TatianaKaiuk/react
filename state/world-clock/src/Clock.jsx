@@ -10,7 +10,7 @@ const getTimeWithOffset = (offset) => {
   );
 };
 
-const time = (time) => moment(time).format('h:mm:ss a');
+const time = (time) => moment(time).format('h:mm:ss A');
 
 class Clock extends Component {
   constructor(props) {
