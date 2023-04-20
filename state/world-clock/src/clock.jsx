@@ -22,15 +22,15 @@ class Clock extends Component {
 
     setInterval(() => {
       this.setState({
-        offset: this.state.offset,
+        offset: getTimeWithOffset(props.offset),
       });
-    }, props.interval);
+    }, 1000);
   }
 
   render() {
     return (
       <div className="clock">
-        <div className="clock__location">{`${props.location}`}</div>
+        <div className="clock__location">{`${this.props.location}`}</div>
         <div className="clock__time">{`${time(this.state.offset)}`}</div>
       </div>
     );
