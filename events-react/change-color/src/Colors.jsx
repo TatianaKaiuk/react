@@ -40,3 +40,5 @@ class Colors extends Component {
   }
 }
 export default Colors;
+
+// если нужно поставить обработчик на этапе погружения - называем обработчик onClickCapture={}
