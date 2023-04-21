@@ -8,6 +8,7 @@ class Toggler extends Component {
       toggler: props.toggler,
     };
   }
+
   change() {
     
     this.setState({
@@ -16,7 +17,7 @@ class Toggler extends Component {
   }
   render() {
     return (
-      <div className="toggler" onClick={() =>this.change()}>
+      <div className="toggler" onClick={() => this.change()}>
         {this.state.toggler}
       </div>
     );
