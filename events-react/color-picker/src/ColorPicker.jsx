@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 
-
 class ColorPicker extends Component {
-  
+  // constructor(props) {
+  //   super(props);
+    
+  //   this.state = {
+  //     color: '',
+  //   }
+  // }
+
   setTitle = (color) => {
-    const elemTitle = document.querySelector('.picker__title');
-    elemTitle.textContent = color;
+     const elemTitle = document.querySelector('.picker__title');
+    // this.setState({
+    //   color: color,
+    // })
+     elemTitle.textContent = '';
+     elemTitle.textContent = color;
   };
 
   clearTitle() {
-     const elemTitle = document.querySelector('.picker__title');
-     elemTitle.textContent = '';
-    }
-  
+    const elemTitle = document.querySelector('.picker__title');
+    elemTitle.textContent = '';
+  }
 
   render() {
     return (
@@ -26,7 +35,7 @@ class ColorPicker extends Component {
           ></button>
           <button
             className="picker__button picker__button_aqua"
-            onMouseEnter={() => this.setTitle('Aqua')}
+            onMouseEnter={() => this.setTitle('Auqa')}
             onMouseLeave={this.clearTitle}
           ></button>
           <button
