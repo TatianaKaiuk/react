@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Greeting from './Greeting';
 import './index.scss';
-import OnLogout from './Logout';
-import OnLogin from './Login';
+import Logout from './Logout';
+import Login from './Login';
 
 class Auth extends Component {
   constructor(props) {
@@ -24,9 +24,9 @@ class Auth extends Component {
     let button;
 
     if (isLoggedIn) {
-      button = <OnLogout onLogout={()=>this.handleLogoutClick()} />;
+      button = <Logout onLogout={()=>this.handleLogoutClick()} />;
     } else {
-      button = <OnLogin onLogin={()=>this.handleLoginClick()} />;
+      button = <Login onLogin={()=>this.handleLoginClick()} />;
     }
     return (
       <div className="panel">
