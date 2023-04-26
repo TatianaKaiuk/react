@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Greeting from './Greeting';
 import './index.scss';
-import onLogout from './Logout';
-import onLogin from './Login';
+// import onLogout from './Logout';
+// import onLogin from './Login';
 
 class Auth extends Component {
   constructor(props) {
@@ -29,7 +29,11 @@ class Auth extends Component {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {this.state.isLoggedIn ? onLogin : onLogout}
+        {this.state.isLoggedIn ? (
+          <button onClick={this.handleLogout}>Logout</button>
+        ) : (
+          <button onClick={this.handleLogin}>Login</button>
+        )}
       </div>
     );
   }
