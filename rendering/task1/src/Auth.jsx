@@ -8,8 +8,6 @@ class Auth extends Component {
   constructor(props) {
     super(props);
 
-      this.handleLoginClick = this.handleLoginClick.bind(this);
-      this.handleLogoutClick = this.handleLogoutClick.bind(this);
       this.state = { isLoggedIn: false };
   }
 
@@ -26,9 +24,9 @@ class Auth extends Component {
     let button;
 
     if (isLoggedIn) {
-      button = <OnLogout onLogout={this.handleLogoutClick} />;
+      button = <OnLogout onLogout={()=>this.handleLogoutClick()} />;
     } else {
-      button = <OnLogin onLogin={this.handleLoginClick} />;
+      button = <OnLogin onLogin={()=>this.handleLoginClick()} />;
     }
     return (
       <div className="panel">
