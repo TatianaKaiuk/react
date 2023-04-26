@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Info from './Info';
 
 const IPhone13 = 'Price is 500$. Available in 2 colors';
-const  IPhone13Pro = 'Price is 600$. Not available in 1 color';
+const  IPhone13Pro = 'Price is 650$. Not available in 1 color';
 
 class Page extends Component {
     state = { // конструктор используем если нужен доступ к props
