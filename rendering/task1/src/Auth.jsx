@@ -29,7 +29,8 @@ class Auth extends Component {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {this.state.isLoggedIn ? (
+        {/* {this.state.isLoggedIn ? OnLogin : OnLogout} */}
+         {this.state.isLoggedIn ? (
           <button className="logout btn" onClick={this.handleLogout}>
             Logout
           </button>
@@ -37,7 +38,7 @@ class Auth extends Component {
           <button className="login btn" onClick={this.handleLogin}>
             Login
           </button>
-        )}
+        )} 
       </div>
     );
   }

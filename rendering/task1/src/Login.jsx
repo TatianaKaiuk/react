@@ -4,7 +4,7 @@ import React from 'react';
 
 const OnLogin = (props) => {
   return (
-    <button className="login btn" onClick={props.onClick}>
+    <button className="login btn" onClick={props}>
       Login
     </button>
   );
