@@ -4,6 +4,6 @@ const Info = ({ info }) => {
   if (!info) {
     return null;
   }
-  return <div className="message">{info}</div>;
+  return <div className="info">{info}</div>;
 };
 export default Info;
