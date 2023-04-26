@@ -2,7 +2,11 @@ import React from 'react';
 
  
 
-const onLogin = () => {
-  return <button onClick={this.handleLogin}>Login</button>;
+const OnLogin = (props) => {
+  return (
+    <button className="login btn" onClick={props.onClick}>
+      Login
+    </button>
+  );
 };
-export default onLogin;
+export default OnLogin;
