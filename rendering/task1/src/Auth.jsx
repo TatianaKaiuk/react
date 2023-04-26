@@ -6,39 +6,34 @@ import OnLogin from './Login';
 
 class Auth extends Component {
   constructor(props) {
-      super(props);
-  
-    this.state = {
-      isLoggedIn: false,
-    };
+    super(props);
+
+      this.handleLoginClick = this.handleLoginClick.bind(this);
+      this.handleLogoutClick = this.handleLogoutClick.bind(this);
+      this.state = { isLoggedIn: false };
   }
 
-  handleLogin = () => {
-    this.setState({
-      isLoggedIn: true,
-    });
+  handleLoginClick() {
+    this.setState({isLoggedIn: true});
   }
 
-  handleLogout = () => {
-    this.setState({
-      isLoggedIn: false,
-    });
+  handleLogoutClick() {
+    this.setState({isLoggedIn: false});
   }
 
   render() {
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
+
+    if (isLoggedIn) {
+      button = <OnLogout onLogout={this.handleLogoutClick} />;
+    } else {
+      button = <OnLogin onLogin={this.handleLoginClick} />;
+    }
     return (
       <div className="panel">
-        <Greeting isLoggedIn={this.state.isLoggedIn} />
-        {/* {this.state.isLoggedIn ? OnLogin : OnLogout} */}
-         {this.state.isLoggedIn ? (
-          <button className="logout btn" onClick={this.handleLogout}>
-            Logout
-          </button>
-        ) : (
-          <button className="login btn" onClick={this.handleLogin}>
-            Login
-          </button>
-        )} 
+        <Greeting isLoggedIn={isLoggedIn} />
+        {button}
       </div>
     );
   }
