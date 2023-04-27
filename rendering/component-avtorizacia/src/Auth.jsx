@@ -4,8 +4,6 @@ import Logout from './Logout';
 import Spinner from './Spinner';
 
 
-// setInterval(() => Logout(), 2000);
-
 class Auth extends Component {
   constructor(props) {
     super(props);
@@ -13,19 +11,28 @@ class Auth extends Component {
       onLogin: false,
     };
   }
-  change() {
-    this.setState({
-      onLogin:true,
+  handleLoginClick() {
+    this.setState({ 
+        onLogin: true
     });
-    Spinner()
-  
+  }
+  handleLogoutClick() {
+    this.setState({ onLogin: false });
+  }
+
+  spinner() {
+   setInterval(() => <Spinner size={10}/>, 2000)
   }
 
   render() {
-    return <>
-    <Login onClick={() => this.change()}/>
-    {/* {this.state.onLogin ? <Logout /> : <Login />} */}
-    </>;
+    const onLogin = this.state.onLogin;
+    if (onLogin) {
+    
+      return <Logout onLogout={() => this.handleLogoutClick()} />;
+    }
+    if (Logout) return <Login onLogin={() => this.handleLoginClick()} />;
+
+    return <Login onClick={()=> this.spinner()}/>
   }
 }
 export default Auth;
