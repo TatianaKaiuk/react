@@ -3,37 +3,49 @@ import Login from './Login';
 import Logout from './Logout';
 import Spinner from './Spinner';
 
-
 class Auth extends Component {
   constructor(props) {
     super(props);
     this.state = {
       onLogin: false,
+      isProcessing: false,
     };
   }
   handleLoginClick() {
-    this.setState({ 
-        onLogin: true
+    this.setState(
+      {
+        onLogin: true,
+        isProcessing: true,
+      },
+      () => {
+        setTimeout(() => {
+          this.setState({ isProcessing: false });
+        }, 2000);
+      }
+    );
+  }
+
+  handleLogoutClick() {
+    this.setState({
+      onLogin: false,
+      isProcessing: false,
     });
   }
-  handleLogoutClick() {
-    this.setState({ onLogin: false });
-  }
-  
+
   render() {
-   const spinner = () => {
-     setInterval(() => <Spinner size={30}/>, 2000)
-    }
-    
-    
     const onLogin = this.state.onLogin;
+    const isProcessing = this.state.isProcessing;
+
+    if (isProcessing) {
+      return <Spinner size={60} />;
+    }
+
     if (onLogin) {
-    
       return <Logout onLogout={() => this.handleLogoutClick()} />;
     }
-    if (Logout) return <Login onLogin={() => this.handleLoginClick()} />;
+    return <Login onLogin={() => this.handleLoginClick()} />;
 
-    return <Login onClick={()=>spinner()}/>
+    // return <Login onClick={()=>spinner()}/>
   }
 }
 export default Auth;
