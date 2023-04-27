@@ -19,12 +19,13 @@ class Auth extends Component {
   handleLogoutClick() {
     this.setState({ onLogin: false });
   }
-
-  spinner() {
-   setInterval(() => <Spinner size={10}/>, 2000)
-  }
-
+  
   render() {
+   const spinner = () => {
+     setInterval(() => <Spinner size={30}/>, 2000)
+    }
+    
+    
     const onLogin = this.state.onLogin;
     if (onLogin) {
     
@@ -32,7 +33,7 @@ class Auth extends Component {
     }
     if (Logout) return <Login onLogin={() => this.handleLoginClick()} />;
 
-    return <Login onClick={()=> this.spinner()}/>
+    return <Login onClick={()=>spinner()}/>
   }
 }
 export default Auth;
