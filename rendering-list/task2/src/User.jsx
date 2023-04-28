@@ -1,6 +1,6 @@
 import React from 'react';
 
-const User = ({name, age}) => {
+const User = ({name, age}) => { // компонента принимает свойства и отрисовывает
     return (
       <li className="user">
         <span className="user__name">{name}</span>

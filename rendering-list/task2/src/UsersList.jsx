@@ -2,27 +2,27 @@ import React, { Component } from 'react';
 import User from './User';
 
 class UsersList extends Component {
-  state = {
+  state = { // нужен для изменения сортировки
     sorting: null,
   };
 
-  toggleSorting = () => {
+  toggleSorting = () => { // изменяем надпись на кнопке в соответствии сортировки
     const newSorting = this.state.sorting === 'asc' ? 'desc' : 'asc';
     this.setState({
-      sorting: newSorting,
+      sorting: newSorting, // изменение состояния
     });
   };
 
   render() {
     let usersList;
-    if (this.state.sorting) {
-      usersList = this.props.users
+    if (this.state.sorting) { // проверяем отсортирован ли список
+      usersList = this.props.users // сортируем, делая копию с помощью slice. так как сорт изменяет значальные данные
         .slice()
         .sort((a, b) =>
           this.state.sorting === 'asc' ? a.age - b.age : b.age - a.age
         );
     } else {
-      usersList = this.props.users;
+      usersList = this.props.users;  // к списку получаем доступ таким способом
     }
 
     return (
