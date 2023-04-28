@@ -5,18 +5,20 @@ class UsersList extends Component {
   state = {
     sorting: null,
   };
+
   toggleSorting = () => {
     const newSorting = this.state.sorting === 'asc' ? 'desc' : 'asc';
     this.setState({
       sorting: newSorting,
     });
   };
+
   render() {
     let usersList;
     if (this.state.sorting) {
       usersList = this.props.users
         .slice()
-        .sort(a, (b) =>
+        .sort((a, b) =>
           this.state.sorting === 'asc' ? a.age - b.age : b.age - a.age
         );
     } else {
