@@ -2,12 +2,12 @@ import React from 'react';
 import Transaction from './Transaction';
 
 const TransactionsList = ({ transactions }) => {
-    // let transactions = transactions.slice();
+     let transactionsList = transactions.slice();
   return (
     <ul className="transactions">
-      {transactions.map((transactions) => (
+      {transactionsList.map((transactions) => (
         <Transaction key={transactions.id} {...transactions} />
-       ))} 
+      ))}
     </ul>
   );
 };
