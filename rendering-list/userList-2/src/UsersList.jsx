@@ -7,20 +7,23 @@ class UsersList extends Component {
     pagination: null,
   };
   togglePage = () => {
-    const newPagination = this.state.pagination === '1' ? '2' : '1';
+    const newPagination = this.state.pagination === 1 ? 2 : disabled;
     this.setState({
       pagination: newPagination, // изменение состояния
     });
   };
+  // itemsPerPage =() => {
+  //   if 
+  // }
   render() {
     let usersList = this.props.users.slice();
 
     return (
       <div>
-        <div class="pagination">
+        <div className="pagination">
           <Pagination currentPage={1} />
         </div>
-        <ul class="users">
+        <ul className="users">
           {usersList.map((user) => (
             <User key={user.id} {...user} />
           ))}
