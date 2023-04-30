@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 
 class Life extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         console.log('constructor: good place to create state')
     }
     componentDidMount() {
@@ -16,12 +16,12 @@ class Life extends Component {
     }
 
     componentWillUnmount() {
-        console.log('componentWillUnmount: cleanup before DOM related to component will be removed');
+        console.log('componentWillUnmount(): cleanup before DOM related to component will be removed');
     }
 
     render() {
         console.log('return React element to build DOM')
-        return <div>78</div>
+        return <div>{this.props.number}</div>
     }
 }
 export default Life;
