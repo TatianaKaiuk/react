@@ -29,7 +29,7 @@ class Clock extends Component {
     }, 1000);
   }
 
-  componentWillUnmount() {
+  componentWillUnmount() { // и обязательная отписка
     clearInterval(this.interval);
   }
 
