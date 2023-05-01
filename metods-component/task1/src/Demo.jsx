@@ -5,9 +5,11 @@ class Demo extends Component {
   state = {
     number: Math.round(Math.random() * 100),
   };
+
+  // кнопки для изменения состояния
   show = () => {
     this.setState({
-      visible: true,
+      visible: true, // если visible true - то рендерится LIfe, и наоборот
     });
   };
   hide = () => {
@@ -29,9 +31,10 @@ class Demo extends Component {
                 <button onClick={this.hide}>Hide</button>
                 <button onClick={this.update}>Update</button>
             </div>
-            {this.state.visible && <Life number={this.state.number}/>}
+            {this.state.visible && <Life number={this.state.number}/>} 
         </div>
     )
   }
 }
+//  {this.state.visible && <Life number={this.state.number}/>} - проверка на true, рендерить элемент или нет 
 export default Demo;
