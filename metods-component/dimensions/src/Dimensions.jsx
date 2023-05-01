@@ -1,23 +1,24 @@
 import React, { Component } from 'react';
 
 class Dimensions extends Component {
-  state = {
+  state = { // начальное значение размеров страницы
     width: null,
     height: null,
   };
 
   componentDidMount() {
+    // чтобы получить текущие размеры, назначаем обработчик на window, "resize"
     window.addEventListener('resize', this.onResize);
 
-    const { innerWidth, innerHeight } = window;
-    this.setDimensions(innerWidth, innerHeight);
+    const { innerWidth, innerHeight } = window; // деструктуризацией достаем параметры размеров
+    this.setDimensions(innerWidth, innerHeight); // функция которая меняет стейт
   }
 
-  componentWillUnmount() {
+  componentWillUnmount() { // делаем отписку, для экономии памяти
     window.removeEventListener('resize', this.onResize);
   }
 
-  onResize = (e) => {
+  onResize = (e) => {  // функция для отслуживания изменения размеров экрана 
     const { innerWidth, innerHeight } = e.target;
     this.setDimensions(innerWidth, innerHeight);
   };
@@ -27,7 +28,7 @@ class Dimensions extends Component {
       width,
       height,
     });
-    document.title = `${innerWidth} x ${innerHeight}`;
+    document.title = `${innerWidth} x ${innerHeight}`; // устанавливаем размеры в название документа
   };
 
   render() {

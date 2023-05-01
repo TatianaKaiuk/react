@@ -5,3 +5,5 @@ import Dimensions from './Dimensions';
 
 const rootElem = document.querySelector('#root');
 ReactDOM.render(<Dimensions />, rootElem);
+
+// получаем размер страницы с изменениями
