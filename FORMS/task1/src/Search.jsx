@@ -15,14 +15,14 @@ class Search extends Component {
   };
   render() {
     return (
-      <form className="search">
+      <form className="search" onSubmit={this.search}>
         <input
           type="text"
           className="search__input"
           value={this.state.value}
           onChange={this.handleChange}
         />
-        <button className="search__button" onClick={this.search}>
+        <button className="search__button" type='submit'>
           Search
         </button>
       </form>
