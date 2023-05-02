@@ -21,12 +21,12 @@ this.setState({
 })
 }
 onSubmit = () => {
- console.log(this.props.state);
+ 
 }
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.onSubmit}>
+      <form className="login-form" onSubmit>
         <h1 className="form-title">Profile</h1>
 
         <div className="form-control">
