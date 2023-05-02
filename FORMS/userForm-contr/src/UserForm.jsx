@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import App from './App';
 
 class UserForm extends Component {
   state = {
@@ -20,8 +20,8 @@ this.setState({
     [name]: val,
 })
 }
-onSubmit = (props) => {
-   
+onSubmit = () => {
+ console.log(this.props.state);
 }
 
   render() {
