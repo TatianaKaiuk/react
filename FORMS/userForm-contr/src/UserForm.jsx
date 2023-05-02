@@ -20,14 +20,13 @@ this.setState({
     [name]: val,
 })
 }
-handleSubmit = e => {
-    e.preventDefault();
-    console.log(this.state);
+onSubmit = (props) => {
+   
 }
 
   render() {
     return (
-      <form className="login-form" onSubmit={this.handleSubmit}>
+      <form className="login-form" onSubmit={this.onSubmit}>
         <h1 className="form-title">Profile</h1>
 
         <div className="form-control">
@@ -63,7 +62,7 @@ handleSubmit = e => {
             className="form-label"
             id="occupation"
             htmlFor="occupation"
-            onChange={this.handleChange}
+           
           >
             Occupation
           </label>
@@ -85,12 +84,12 @@ handleSubmit = e => {
             className="form-label"
             id="about"
             htmlFor="about"
-            value={this.state.about}
-          >
+            >
             About
           </label>
           <textarea
             name="about"
+            value={this.state.about}
             className="form-input"
             onChange={this.handleChange}
           />
