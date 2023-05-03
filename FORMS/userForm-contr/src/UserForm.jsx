@@ -9,24 +9,24 @@ class UserForm extends Component {
     about: '',
   };
 
-handleChange = (e) => {
-const {name, value, checked, type} = e.target;
+  handleChange = (e) => {
+    const { name, value, checked, type } = e.target;
 
-const val = type === 'checkbox'
-? checked
-: value;
+    const val = type === 'checkbox' ? checked : value;
 
-this.setState({
-    [name]: val,
-})
-}
-onSubmit = () => {
- 
-}
+    this.setState({
+      [name]: val,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+   this.props.onSubmit(this.state)
+  };
 
   render() {
     return (
-      <form className="login-form" onSubmit>
+      <form className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
 
         <div className="form-control">
@@ -58,12 +58,7 @@ onSubmit = () => {
         </div>
 
         <div className="form-control">
-          <label
-            className="form-label"
-            id="occupation"
-            htmlFor="occupation"
-           
-          >
+          <label className="form-label" id="occupation" htmlFor="occupation">
             Occupation
           </label>
           <select
@@ -80,11 +75,7 @@ onSubmit = () => {
         </div>
 
         <div className="form-control">
-          <label
-            className="form-label"
-            id="about"
-            htmlFor="about"
-            >
+          <label className="form-label" id="about" htmlFor="about">
             About
           </label>
           <textarea
