@@ -7,13 +7,13 @@ class UserForm extends Component {
       (acc, [name, value]) => ({ ...acc, [name]: value }),
       {}
     );
-    console.log(formData);
+    this.props.onSubmit(formData);
   };
 
   setRef = (node) => {
     this.formRef = node;
   };
-
+ 
   render() {
     return (
       <form
