@@ -12,8 +12,8 @@ const UsersList = ({ users }) => {
    return user.name.toLowerCase().includes(filterText.toLowerCase());
   });
 
-  const handleFilterChange = (newFilter) => {
-    setFilterText(newFilter);
+  const handleFilterChange = (e) => {
+    setFilterText(e.target.value);
   };
 
   return (
