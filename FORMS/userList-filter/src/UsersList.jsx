@@ -9,7 +9,7 @@ const UsersList = ({ users }) => {
     if (!filterText) {
       return true; // если поле фильтрации пустое, показываем всех пользователей
     }
-   return user.name.toLowerCase().includes(filterText.toLowerCase());
+     return user.name.toLowerCase() === filterText.toLowerCase();
   });
 
   const handleFilterChange = (newFilter) => {
@@ -19,7 +19,7 @@ const UsersList = ({ users }) => {
   return (
     <div>
       <Filter
-        FilterText={filterText}
+        filterText={filterText}
         count={filteredUsers.length}
         onChange={handleFilterChange}
       />
