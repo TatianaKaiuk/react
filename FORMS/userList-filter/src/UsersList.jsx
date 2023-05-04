@@ -1,15 +1,34 @@
-import React, { Component } from 'react';
 import User from './User';
 import Filter from './Filter';
+import React, { useState } from 'react';
 
-class UsersList extends Component {
-  render() {
-    return (
-      <div>
-        <Filter />
-        <User key={this.props.users.id} />
-      </div>
-    );
-  }
-}
+const UsersList = ({ users }) => {
+  const [filterText, setFilterText] = useState('');
+
+  const filteredUsers = users.filter((user) => {
+    if (!filterText) {
+      return true; // если поле фильтрации пустое, показываем всех пользователей
+    }
+   return user.name.toLowerCase().includes(filterText.toLowerCase());
+  });
+
+  const handleFilterChange = (newFilter) => {
+    setFilterText(newFilter);
+  };
+
+  return (
+    <div>
+      <Filter
+        FilterText={filterText}
+        count={filteredUsers.length}
+        onChange={handleFilterChange}
+      />
+
+      {filteredUsers.map((user) => (
+        <User key={user.id} {...user} />
+      ))}
+    </div>
+  );
+};
+
 export default UsersList;
