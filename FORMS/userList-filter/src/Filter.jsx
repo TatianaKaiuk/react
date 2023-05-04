@@ -1,10 +1,7 @@
 import React from 'react';
 
-const Filter = ({filterText, count, onChange})=> {
-    // const handleFilterChange = (e) => {
-    //   onChange(e.target.value);
-    // };
-
+const Filter = ({filterText, count, onChange})=> { // принимает свойства, которые указанны при рендере, просто подставляем в нужные места
+  
     return (
       <div className="filter">
         <span className="filter__count">{count}</span>
