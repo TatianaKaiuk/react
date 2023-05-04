@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Filter = ({filterText, count, onChange})=> {
-    const handleFilterChange = (e) => {
-      onChange(e.target.value);
-    };
+    // const handleFilterChange = (e) => {
+    //   onChange(e.target.value);
+    // };
 
     return (
       <div className="filter">
@@ -12,7 +12,7 @@ const Filter = ({filterText, count, onChange})=> {
           type="text"
           className="filter__input"
           value={filterText}
-          onChange={handleFilterChange}
+          onChange={(e)=> onChange(e.target.value)}
         />
       </div>
     );

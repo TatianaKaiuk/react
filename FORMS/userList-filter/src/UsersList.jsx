@@ -9,7 +9,7 @@ const UsersList = ({ users }) => {
     if (!filterText) {
       return true; // если поле фильтрации пустое, показываем всех пользователей
     }
-     return user.name.toLowerCase() === filterText.toLowerCase();
+   return user.name.toLowerCase().includes(filterText.toLowerCase());
   });
 
   const handleFilterChange = (newFilter) => {
