@@ -5,7 +5,7 @@ import Profile from './Profile';
 class App extends Component {
     state = {
         userData: {
-            firstName: 'Tom',
+            firstName: 'John',
             lastName: 'Doe',
         }
     }
