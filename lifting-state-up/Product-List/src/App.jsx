@@ -13,7 +13,7 @@ class App extends Component {
         const {name, value} = e.target;
         this.setState({
             userData: {
-                ...this.state.userData,
+                ...this.state.userData, // чтобы не терялось 2е значение, делаем копию стейта
                 [name]: value,
             }
         });
