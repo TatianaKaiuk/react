@@ -22,7 +22,7 @@ class App extends Component {
 
     render() {
         return (
-          <div class="app">
+          <div className="app">
             <OddNumbers title="Odd numbers" number={this.state.number} />
             <EvenNumbers title="Even numbers" number={this.state.number} />
             <Numbers title="All numbers" number={this.state.number} />
