@@ -21,9 +21,12 @@ class Expand extends Component {
   render() {
      if (!this.state.isOpen) {
        return (
+        <div className="expand__header">
+        <span className="expand__title">{this.props.title}</span>
          <button className="expand__toggle-btn" onClick={this.showContent}>
            <i className="fa-solid fa-arrow-down"></i>
          </button>
+         </div>
        );
      }
     return (
