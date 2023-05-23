@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 // import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
@@ -24,5 +25,17 @@ const Expand = ({ children, title, isOpen, onClose, showContent }) => {
     </div>
   );
 };
+
+Expand.propTypes = {
+  isOpen: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string,
+  onClose: PropTypes.func.isRequired,
+};
+Expand.defaultProps = {
+  isOpen: false,
+  title: '',
+};
+
 
 export default Expand;
