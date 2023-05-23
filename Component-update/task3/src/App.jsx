@@ -24,7 +24,7 @@ class App extends Component {
     if (!this.state.isOpen) {
       return (
         <button className="expand__toggle-btn" onClick={this.showContent}>
-          <FontAwesomeIcon icon={faArrowDown} />
+          <i className="fa-solid fa-arrow-down"></i>
         </button>
       );
     }

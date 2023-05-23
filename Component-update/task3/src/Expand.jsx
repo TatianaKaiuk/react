@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 // import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 const Expand = ({ children, title, isOpen, onClose, showContent }) => {
@@ -18,7 +18,7 @@ const Expand = ({ children, title, isOpen, onClose, showContent }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={onClose}>
-          <FontAwesomeIcon icon={faArrowUp} />
+          <i className="fa-solid fa-arrow-up"></i>
         </button>
       </div>
       <div className="expand__content">{children}</div>
