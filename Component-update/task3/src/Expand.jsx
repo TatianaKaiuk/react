@@ -1,41 +1,54 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-// import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
-const Expand = ({ children, title, isOpen, onClose, showContent }) => {
-  // if (!isOpen) {
-  //   return (
-  //     <button className="expand__toggle-btn" onClick={showContent}>
-  //       <FontAwesomeIcon icon={faArrowDown} />
-  //     </button>
-  //   );
-  // }
+class Expand extends Component {
+  state = {
+    isOpen: false,
+  };
 
-  return (
-    <div className="expand border">
-      <div className="expand__header">
-        <span className="expand__title">{title}</span>
-        <button className="expand__toggle-btn" onClick={onClose}>
-          <i className="fa-solid fa-arrow-up"></i>
-        </button>
+  hideContent = () => {
+    this.setState({
+      isOpen: false,
+    });
+  };
+
+  showContent = () => {
+    this.setState({
+      isOpen: true,
+    });
+  };
+
+  render() {
+     if (!this.state.isOpen) {
+       return (
+         <button className="expand__toggle-btn" onClick={this.showContent}>
+           <i className="fa-solid fa-arrow-down"></i>
+         </button>
+       );
+     }
+    return (
+      <div className="expand border">
+        <div className="expand__header">
+          <span className="expand__title">{this.props.title}</span>
+          <button className="expand__toggle-btn" onClick={this.hideContent}>
+            <i className="fa-solid fa-arrow-up"></i>
+          </button>
+        </div>
+        <div className="expand__content">{this.props.children}</div>
       </div>
-      <div className="expand__content">{children}</div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Expand.propTypes = {
   isOpen: PropTypes.bool,
   children: PropTypes.element.isRequired,
   title: PropTypes.string,
-  onClose: PropTypes.func.isRequired,
+  
 };
 Expand.defaultProps = {
   isOpen: false,
   title: '',
 };
-
 
 export default Expand;
