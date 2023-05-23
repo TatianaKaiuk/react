@@ -1,5 +1,7 @@
-import React, { Component } from "react";
-import Expand from "./Expand";
+import React, { Component } from 'react';
+import Expand from './Expand';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 class App extends Component {
   state = {
@@ -19,11 +21,18 @@ class App extends Component {
   };
 
   render() {
+    if (!this.state.isOpen) {
+      return (
+        <button className="expand__toggle-btn" onClick={this.showContent}>
+          <FontAwesomeIcon icon={faArrowDown} />
+        </button>
+      );
+    }
     return (
       <div className="app">
         <Expand
-          isOpen={this.state.isOpen}
-          
+          isOpen={this.showContent}
+          onClose={this.hideContent}
           title="Some title"
         >
           <p>
