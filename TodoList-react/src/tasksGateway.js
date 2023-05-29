@@ -35,7 +35,7 @@ export const updateTask = (id, taskData) => {
   return fetch(`${baseUrl}/${id}`, {
     method: 'PUT',
     headers: {
-      'Content-Type': 'application/json;utc-8',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(taskData),
   }).then((response) => {
