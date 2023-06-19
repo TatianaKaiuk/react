@@ -9,10 +9,10 @@ const Users = () => {
 
         <ul className="navigation">
           <li className="navigation__item">
-            <Link to="http:api.github.com/users/github">Github</Link>
+            <Link to="/users/github">Github</Link>
           </li>
           <li className="navigation__item">
-            <Link to="http:api.github.com/users/facebook">Facebook</Link>
+            <Link to="/users/facebook">Facebook</Link>
           </li>
         </ul>
         <Switch>
