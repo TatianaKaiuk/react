@@ -19,7 +19,9 @@ const Users = () => {
           <Route exact path="/users">
             <span>Select a user please</span>
           </Route>
-          <Route path="/users/:userId" component={User} />
+          <Route path="/users/:userId">
+            <User />
+          </Route>
         </Switch>
       </div>
     );
